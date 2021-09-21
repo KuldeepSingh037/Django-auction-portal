@@ -21,9 +21,9 @@ from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
 
 urlpatterns = [
     # path('practice/',include('practice.urls')),
-    # path('auction/',include('auction.urls')),
     # path('team/',include('team.urls')),
     path('home/',include('home.urls')),
+    path('portal/',include('portal.urls')),
     path('login/',include('login.urls')),
     path('admin/', admin.site.urls),
 ]

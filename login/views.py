@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from .models import credentials
-# from auction.models import seller
+from portal.models import seller
 from django.urls import reverse
 
 # Create your views here.
@@ -74,7 +74,7 @@ def loggedin(request):
             user=get_object_or_404(credentials, email=email)
             properties=seller.objects.all()
             all=credentials.objects.all()
-            return render(request, 'auction/loggedin.html',{
+            return render(request, 'portal/loggedin.html',{
                 'user': user,
                 'properties' : properties,
                 'all' : all,

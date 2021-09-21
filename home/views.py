@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, Http404, HttpResponseRedirect
-from auction.models import seller
+from portal.models import seller
 from login.models import credentials
 from .models import complete, bidder
 from datetime import date

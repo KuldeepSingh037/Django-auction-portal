@@ -11,11 +11,11 @@
     </head>
     <body>
 
-        {% include 'auction/pannel.html' %}
+        {% include 'portal/pannel.html' %}
             
         <!-- printing the button for having an auction -->
         <!-- have a nice name for the button -->
-        <form method='POST' action="{% url 'auction:auction' user.id %}">
+        <form method='POST' action="{% url 'portal:auction' user.id %}">
             {% csrf_token %}
             <button type='submit' class='btn btn-success' style='float:right;margin-top:20px; margin-right:20px;'>
                 Create an Auction
@@ -30,7 +30,7 @@
             
             {% for property in properties %}
                 <div class="box1"> 
-                    <form action="{% url 'auction:particular' property.id %}" method='POST' enctype="multipart/form-data">
+                    <form action="{% url 'portal:particular' property.id %}" method='POST' enctype="multipart/form-data">
                         {% csrf_token %}
                         <button type='submit' name='cid' value='{{ user.id }}'>
                             <div class="detail">

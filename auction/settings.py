@@ -33,9 +33,9 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     # 'practice.apps.PracticeConfig',
-    # 'auction.apps.AuctionConfig',
     # 'team.apps.TeamConfig',
     'home.apps.HomeConfig',
+    'portal.apps.PortalConfig',
     'login.apps.LoginConfig',
     'django.contrib.admin',
     'django.contrib.auth',

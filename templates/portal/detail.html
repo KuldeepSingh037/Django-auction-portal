@@ -89,7 +89,7 @@
             
             <p><strong style="color: red; text-transform:uppercase; ">{{ error_message }}</strong></p>
 
-            <form method='POST' action="{% url 'auction:bid' item.id %}" style='border: 1px solid black'>
+            <form method='POST' action="{% url 'portal:bid' item.id %}" style='border: 1px solid black'>
                 {% csrf_token %}
                 <!-- placeholder='Enter amount in Rs/-' -->
                 <div class="amntleft">

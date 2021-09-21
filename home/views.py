@@ -10,7 +10,7 @@ from datetime import date
 def home(request):
 
     dateToday=date.today()
-    todays_properties = seller.objects.raw('SELECT * from seller WHERE date < %s', [dateToday])
+    todays_properties = seller.objects.raw('SELECT * from portal_seller WHERE date < %s', [dateToday])
     for item in todays_properties:
         max=0
         buyers= bidder.objects.filter(bid_id=item.id)

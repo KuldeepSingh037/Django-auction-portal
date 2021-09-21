@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST">
+
+        <!-- points ot remember -->
+        <!-- if you use action = '/name/, then it will search for the app name = 'name' -->
+        <!-- if you use action ='name/', then it will search for the url name = 'name' in the current app-->
+
+        <!-- {{form.non_field_error}} -->
+
+        <!-- {{ form.as_p }} -->
+        <!-- {{ form.as_table }} -->
+        <!-- {{ form.as_ul }} -->
+
+        <!-- we can also get particular field like this -->
+        <!-- {{ form.subject.label_tag }} -->
+        <!-- {{ form.subject.errors }} -->
+        <!-- {{ form.subject }} -->
+
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="fieldWrapper">
+                {{ field.errors }}
+                {{ field.label_tag }} {{ field }}
+                {% if field.help_text %}
+                    <div class="help">{{ field.help_text|safe }}</div>
+                {% endif %}
+            </div>
+            <br>
+        {% endfor %}
+
+
+        <br>
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>

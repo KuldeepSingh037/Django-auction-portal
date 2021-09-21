@@ -1,0 +1,72 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/sold_properties.css' %}">
+    </head>
+    <body>
+            {% for completed  in sold_properties %}
+                <div class='boxc'>
+                    <form action="{% url 'home:sold_info' completed.id %}" method='POST'>
+                        {% csrf_token %}
+                        <button type='submit' name='bid' value="<?php echo $row['bid'];" ?>
+                            <div class='top'>
+                                <!-- images of property -->
+                                <!-- add marque to this -->
+                                <marquee scrollamount=3>
+                                    <img class='imgc' src="/media/{{completed.pic1}}" alt="/media/{{completed.pic1}}"/>
+                                    <img class='imgc' src="/media/{{completed.pic1}}" alt="/media/{{completed.pic1}}"/>
+                                    <img class='imgc' src="/media/{{completed.pic1}}" alt="/media/{{completed.pic1}}"/>
+                                    <img class='imgc' src="/media/{{completed.pic1}}" alt="/media/{{completed.pic1}}"/>
+                                </marquee>
+                            </div>
+                            <!-- details pf buyer and seller -->
+                            <div class='bottom' style='text-align:left; color:rgb(17, 0, 167); font-size: 20px'>
+                                <!-- Id : {{completed.bid_id}}<br> -->
+                                <b>Property Name :   <p style=' margin-right:10px; float:right; color:rgb(6, 119, 0);text-transform: capitalize; font-size: 25px'>
+                                    <u>{{completed.name}}</u></b>
+                                </p>
+                                <table style="height: 150px; width:220px">
+                                    <tr>
+                                        <td style='color:rgb(17, 0, 167);text-transform: capitalize; font-size:20px'>
+                                            <b>Category</b></td>
+                                        <td style='color:rgb(17, 0, 167); font-size:20px'>
+                                            <b>:</b></td>
+                                        <td style='color:rgb(6, 119, 0);text-transform: capitalize; font-size:20px'>
+                                            <b>{{completed.category}}</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td style='color:rgb(17, 0, 167);text-transform: capitalize; font-size:20px'>
+                                            <b>Size</b></td>
+                                        <td style='color:rgb(17, 0, 167); font-size:20px'>
+                                            <b>:</b></td>
+                                        <td style='color:rgb(6, 119, 0);text-transform: capitalize; font-size:20px'>
+                                            <b>{{completed.size}} sqft. </b></td>
+                                    </tr>
+                                    <tr>
+                                        <td style='color:rgb(17, 0, 167);text-transform: capitalize; font-size:20px'>
+                                            <b>City</b></td>
+                                        <td style='color:rgb(17, 0, 167); font-size:20px'>
+                                            <b>:</b></td>
+                                        <td style='color:rgb(6, 119, 0);text-transform: capitalize; font-size:20px'>
+                                            <b>{{completed.city}}</b></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class='amnt' ><br>
+                                Selling<br> Price <br> <p style='font-size:25px; font-weight:900; color:red'>Rs {{completed.bidamnt}}</p>
+                            </div>
+                            <div class="date">
+                                <u><b>Bidding Date</b></u> <p style="font-size: 20px;">{{completed.date}}</p>
+                            </div>
+                        </button>
+                    </form>
+                </div>
+            {% endfor %}
+        <br><br><br><br><br><br><br><br>
+    </body>
+</html>

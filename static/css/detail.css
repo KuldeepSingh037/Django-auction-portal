@@ -1,0 +1,139 @@
+body{
+    height: 750px;
+    background-color: blueviolet;
+}
+.pic{
+    position: absolute;
+    border: 1px solid black;
+    margin: 10px;
+    width: 810px;
+    height: 450px;
+}
+.imgd{
+    width: 808px;
+    height: 448px;
+}
+/* property_details */
+.property_detail{
+    position: absolute;
+    border: 1px solid black;
+    background-color: rgb(247, 238, 255);
+    border-radius: 0px 40px 0px 0px;
+    margin-left: 840px;
+    margin-top: 10px;
+    padding: 10px;
+    width: 500px;
+    height: 450px;
+}
+.name{
+    font-size: x-large;
+    text-transform: capitalize;
+    font-weight: 700;
+    color:royalblue;
+}
+.description{
+    font-size: 20px;
+    color: rgba(255, 0, 0, 0.801);
+    font-weight: 700;
+    font-family: cursive;
+}
+.address{
+    color: rgb(33, 165, 0);
+    font-size: 24px;
+    font-family: 'Times new roman';
+    text-transform: uppercase;
+    padding-left: 2vmax;
+    font-weight: 450;
+    border: 1px solid black;
+}
+
+/* seller_details */
+#info{
+    font-size: xx-large;
+    padding-left: 4vmax;
+    font-weight: 900;
+    font-family: 'Lucida calligraphy';
+    color: rgb(84, 2, 167);
+    border: 1px solid black;
+    background-color: burlywood;
+}
+.left{
+    position: absolute;
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+    padding: 10px ;
+}
+.seller_detail{
+    position: absolute;
+    border: 1px solid black;
+    background-color: rgb(247, 238, 255);
+    border-radius: 0px 0px 0px 40px;
+    margin-top: 480px;
+    margin-left: 10px;
+    width: 700px;
+    height: 250px;
+}
+.userpic{
+    width: 180px;
+    height: 180px;
+    border: 1px solid black;
+    border-radius: 100px;
+}
+.middle{
+    position: absolute;
+    border: 1px solid black;
+    width: 250px;
+    height: 200px;
+    margin-left: 199px;
+    padding: 10px;
+    font-size: 17px ;
+    font-weight: 500;
+}
+.right{
+    position: absolute;
+    border: 1px solid black;
+    width: 251px;
+    height: 200px;
+    margin-left: 448px;
+    padding: 10px;
+    font-size: 17px;
+    font-weight: 500;
+}
+/* amount_details */
+.amount{
+    position: absolute;
+    border: 1px solid black;
+    background-color: rgb(247, 238, 255);
+    border-radius: 0px 0px 40px 0px;
+    margin-top: 480px;
+    margin-left: 730px;
+    width: 610px;
+}
+button{
+    margin-top: 70px;
+    margin-right: 10px;
+}
+button:hover{
+    cursor: pointer;
+}
+.amntleft{
+    float: left;
+    border: 1px solid black;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-left: 10px;
+    width: 220px;
+    height: 150px;
+}
+.amntright{
+    float: right;
+    border: 1px solid black;
+    margin-top: 20px;
+    font-size: 18px;
+    height: 150px;
+    width: 350px;
+}
+
+
+

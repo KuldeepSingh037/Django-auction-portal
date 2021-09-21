@@ -1,0 +1,8 @@
+body{
+    background-image:url(/static/pics/background.jpg);
+    background-size: 100% 33%;
+    background-repeat: no-repeat;
+}
+.home{
+    color: white;
+}

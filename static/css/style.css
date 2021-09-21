@@ -1,0 +1,47 @@
+body
+{
+	background-color: rgb(112, 198, 255);
+}
+#container
+{
+	position: fixed;
+	background-color: rgb(85, 85, 85);
+	width:20%;
+	height: 630px;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	box-shadow: 10px 10px rgba(255, 255, 255, 0.5); 
+}
+#header
+{
+	color: whitesmoke;
+	margin-top: 200px;
+	margin-bottom: 50px;
+	text-align: center;	
+	font-weight: 700;
+	font-size: 24px;
+}
+#profilePicture
+{
+	float:left;
+	margin-left: 40px;
+	text-align: left;
+}
+#userDetails table
+{
+	margin-left: 15px;
+	width: 90%;
+}
+td{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 4px;
+	width:62.5%;
+	font-size: 17px;
+	color: whitesmoke;
+}
+.alb{
+	width: 180px;
+	height: 180px;
+	border-radius:100px;
+}

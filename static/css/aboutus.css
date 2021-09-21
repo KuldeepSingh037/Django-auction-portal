@@ -1,0 +1,66 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;    
+}
+body{
+    background-image: url(/static/pics/aboutus.jpg);
+    background-size: 1470px 720px;
+    background-repeat: no-repeat;
+}
+.aboutus{
+    color: white;
+}
+.card{
+    cursor: pointer;    
+    background-color: transparent;    
+    border: none;
+    width: 230px;
+    height: 300px;
+}
+.front, .back{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    backface-visibility:hidden;
+    position: absolute;
+    transition: transform 1.5s linear;
+}
+.front img{
+    border-radius: 30px;
+    height: 100%;
+    width: 100%;
+}
+.front{
+    transform: perspective(600px) rotateY(-0deg);
+}
+.back{
+    border-radius: 25px;
+    background: transparent;
+    transform: perspective(500px) rotateY(180deg);
+}
+.back-content{
+    position: absolute;
+    color: white;
+    text-align: center;
+    width: 100%;
+    top: 40%;
+    font-size: 30px;
+    left: 40%;
+    transform: translate(-50%,-50%);
+}
+h2{
+    font-weight: 700;
+}
+.left{
+    position: absolute;
+    top: 150px;
+    left: 50px;
+}
+.card:hover > .front{    
+    transform: perspective(600px) rotateY(-180deg);
+}
+.card:hover > .back{
+    transform: perspective(600px) rotateY(0deg);
+}
+

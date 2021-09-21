@@ -1,0 +1,88 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+    background:#2e2e2e;
+}
+.login{
+    color: white;
+}
+img{
+    width: 200px;
+}
+.box{
+    position: absolute;
+    top: 16%;
+    left: 25%;
+    background: #000000;
+    text-align: center;
+    width: 700px;
+    height: 520px;
+    padding: 50px;
+    border-radius: 15px;
+}
+.box h1{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.box input[type="email"], .box input[type="password"]{
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid blueviolet;
+    padding: 14px 10px;
+    width: 320px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;    
+}
+.box input[type="email"]:hover, .box input[type="password"]:hover{
+    width: 400px;
+    border-color: #2ecc71;
+}
+#signup{
+    text-decoration: none;
+    color: white;
+    border: 2px solid #2ecc71;
+    padding: 16px 22px;
+    border-radius: 25px;
+}
+.box input[type="submit"]{
+    border:0;
+    background: none;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 13px 20px;
+    width: 100px;
+    outline: none;
+    color: white;
+    border-radius: 25px;
+    transition: 0.25s;    
+    cursor: pointer;
+}
+.box input[type="submit"]:hover,#signup:hover{
+    background: darkgoldenrod;
+    font-weight: 600;
+}
+.box input[name='login']{
+    margin-top: 30px;
+    margin-left: 250px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

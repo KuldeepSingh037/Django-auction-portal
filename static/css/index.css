@@ -1,0 +1,8 @@
+body{
+    color: blue;
+    background-color: burlywood;
+}
+table{
+    color: rgb(255, 0, 0);
+    border: 10px dashed rgb(0, 0, 0);
+}

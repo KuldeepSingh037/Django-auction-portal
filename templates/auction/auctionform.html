@@ -1,0 +1,112 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Auction Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/Auction Form.css' %}">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Auction Form</div>
+    <div class="content">
+      <form action="{% url 'auction:detail' cid %}" method="POST" enctype="multipart/form-data">
+
+        {% csrf_token %}
+
+
+        <div class="userdetails">
+
+          <div class="inputbox">
+            <span class="name">Property Name</span>
+            <input name="name" type="text" placeholder="property name" required>
+          </div>
+
+          <div class="inputbox">
+            <span class="details">Property Category</span>
+              <select name="category" class="propertycategory" required>
+                <option style="display: none;" disabled selected value> --Select Type of Property-- </option>
+                <option value="Agricultural">Agricultural</option>
+                <option value="Commercial">Commercial</option>
+                <option value="Industrial">Industrial</option>
+                <option value="Residential">Residential</option>
+              </select>
+          </div>
+
+          <div class="inputbox">
+            <span class="details">Property Size</span>
+            <input name="size" type="text" placeholder="Area in sq.ft." required>
+          </div>
+
+          <div class="inputbox">
+            <span class="details">Property Address</span>
+            <input name="address" type="text" placeholder="Address of Property" required>
+          </div>
+
+          <div class="inputbox">
+            <span class="details">Property Description</span>
+            <input name="description" type="text" placeholder="Describe about your Property" required>
+          </div>
+
+          <div class="inputbox">
+            <span class="details">Property City</span>
+            <input name="city" type="text" placeholder="City of Property" required>
+          </div>
+
+          <div class="inputbox">
+            <span class="details">Minimum Auction Price</span>
+            <input name="minprice" type="text" placeholder="Starting Price for Auction" required>
+          </div>
+
+          <div class="inputbox">
+            <span class="details">Auction Deadline</span>
+            <input name="deadline" type="date" placeholder="Last Date for Bidding" required>
+          </div>
+
+          <div class="inputbox">
+            <span class="details">Contact Number</span>
+            <input name="contact" type="text" placeholder="Enter Active Phone Number" required>
+          </div>
+
+          <div class="inputbox">
+            <span class="details">Property Document</span>
+            <input name="document" type="file" id="real-file" required>
+          </div>
+
+          <div class="inputbox">
+            <span class="details">Image 1 of Property</span>
+            <input name="pic1" type="file" id="real-file" required>
+          </div>
+
+          <div class="inputbox">
+            <span class="details">Image 2 of Property</span>
+            <input name="pic2" type="file" id="real-file" required>
+          </div>
+
+          <div class="inputbox">
+            <span class="details">Image 3 of Property</span>
+            <input name="pic3" type="file" id="real-file" required>
+          </div>
+
+          <div class="inputbox">
+            <span class="details">Image 4 of Property</span>
+            <input name="pic4" type="file" id="real-file" required>
+          </div>
+
+        </div>
+        
+        <div class="button">
+          <input type="reset" value="Reset">
+        </div>
+        <div class="button">
+          <input name="submit" type="submit" value="Submit">
+        </div>
+        
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+
+{% load static %}
+
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <title>HOME PAGE</title>
+        <meta charset="utf-8">        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+        <!-- for autocopmlete feature -->
+        <link rel="stylesheet" href="{% static 'js/jquery-ui/jquery-ui.css' %}">
+        <link rel="stylesheet" href="{% static 'font-awesome-4.7.0/css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    </head>
+    <body>
+
+        <!-- naviation bar included -->
+        {% include "nav.html" %}
+
+        <div style=" margin-top:400px; text-align: center; color:whitesmoke; font-weight: 900 ; font-size:42px; font-family: 'Times New Roman';" >Discover Luxury Homes</div>
+        <div style="text-align: center; color:whitesmoke; font-weight: 700 ; font-size:1rem; font-family: 'Lucida Sans';" >EQUESTRIAL / HISTORIC / WATERFRONT</div><br><br>
+
+        <!-- search form-->
+        <div class="" style="margin-left: 200px;">
+            <div class="form-inline">                
+                <select name="type" class="form-control" style="width: 300px;">
+                        <option value="" style="display: none;">Type of Property</option>
+                        <option value="Residential">Residential</option>
+                        <option value="Industrial">Industrial</option>
+                        <option value="Agricultural">Agricultural</option>
+                        <option value="Commercial">Commercial</option>
+                    </select>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="" class="form-control" style="width: 300px;" placeholder="Min amount (Rs)">&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="" class="form-control" style="width: 300px;" placeholder="Max amount (Rs)">&nbsp;&nbsp;&nbsp;&nbsp;
+                </div><br>
+                
+                <div class="form-inline">
+                    <input type="text" id="selectcity" style="width: 300px;" class="form-control" placeholder="Enter City">&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="" class="form-control" style="width: 300px;" placeholder="Min area (sq ft.)">&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="" class="form-control" style="width: 300px;" placeholder="Max area (sq ft.)">&nbsp;&nbsp;&nbsp;&nbsp;
+                    <form method="POST" action="{% url 'home:search' %}">
+                        {% csrf_token %}
+                        <button style="font-size: large;" name="search" type="submit" class="btn btn-outline-success"><i class='fa fa-search'></i> Search</button></div><p></p>
+                    </form>
+                </div>
+        </div><br>
+
+        <!-- catchy lines-->
+        <div style="font-size:xx-large; font-weight: bolder; font-family: 'Times New Roman'; text-align: center;">Featured Luxury Property</div>
+        <div style="font-size:large; font-family: 'Times New Roman'; text-align: center;">Create property listing with all features you'd expected</div>
+       
+
+       <p style='font-size:40px' >Some of our best deals (make it more attractive)</p>
+        <div id="complete"></div>
+        {% include 'home/sold_properties.html' %}
+        <!-- <p> have various content at the bottom</p> -->
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- go to top -->
+        <a href="" class="gotop" ><i id="gotop" class="fa fa-arrow-up"></i></a><br>
+
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>    
+    </body>
+</html>
+
+
+<script type="text/javascript" src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery-ui/jquery-ui.js' %}"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        // loading navigation bar    
+        $('#complete').load('php/sold_properties.php');        
+
+        // cities for autocomplete feature
+        var city=['Beawar','Mumbai','Bengaluru','Chennai','Hyderabbad','Kolkata','Ahmedabad','New Delhi','Pune','Jaipur','Surat','Chandigarh','Indore','Lucknow','Gurugram','Bhopal','Agra','Patna','Varanasi','Visakhapatnam','Noida','Kochi','Kanpur','Amritsar','Ghazibad','Nagpur','Coimbatore','Jodhpur','Vadodara','Vijaywada','Faridabad','Madurai','Nashik','Thiruvanthpuram','Rajkot','Mysuru','Udaipur','Pudducherry','Raipur','Merrut','Ludhiana','Aurangabad','Jamshedpur','Shimla','Guwhati','Dehradun','Jabalpur','Ajmer'];
+
+        $('#selectcity').autocomplete({
+            source: city
+            },{
+                autoFocus:true,
+                delay:0,
+                minLength:1
+        });
+    })
+</script>

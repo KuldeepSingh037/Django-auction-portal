@@ -1,0 +1,46 @@
+.listing{
+    float: right;
+    margin-top: 10px;
+    margin-bottom: 100px;
+    margin-right: 20px;
+    width: 76.5%;
+    background-color: rgb(175, 175, 175);
+    padding: 20px 20px 0px 20px;
+}
+.box1{
+    background-color: rgb(238, 238, 238);
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.detail{
+    background-color: whitesmoke;
+    border: 1px solid rgb(194, 194, 194);
+    height: 210px;
+}
+.left{
+    float: left;
+    height: 210px;
+}
+.middle{
+    width: 440px;
+    float: left;
+    height: 210px;
+    padding-top: 10px;
+    padding-left: 20px; 
+}
+.right{
+    border-left: 1px solid black;
+    float: left;
+    height: 210px;
+    padding-left: 20px;
+}
+.price{
+    cursor: auto;
+    color: aqua;
+}
+button:hover{
+    cursor: pointer;
+}

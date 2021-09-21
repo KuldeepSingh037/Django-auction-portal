@@ -1,0 +1,115 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> auction_form/{{item.name}}</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'font-awesome-4.7.0/css/font-awesome.min.css' %}">
+        <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+    </head>
+    <body>
+
+        <!-- part of the photos -->
+        <div id='demo' class=" pic carousel slide" data-ride="carousel">
+            <!--INDICATORS-->
+            <!-- tells where to go next-->
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+                <li data-target="#demo" data-slide-to="3"></li>
+            </ul>
+
+            <!-- SLIDESHOW-->
+            <!--creates the slide show-->
+            <!-- class='carousel-inner' tells about the images-->
+            <div class="carousel-inner ">
+                    
+                <div class="carousel-item active">
+                    <img class='imgd' src="/media/{{item.pic1}}" alt=" /media/{{item.pic1}}"/>
+                </div>
+
+                <div class="carousel-item ">
+                    <img class='imgd' src=" /media/{{item.pic2}}" alt=" /media/{{item.pic2}}"/>
+                </div>
+
+                <div class="carousel-item ">
+                    <img class='imgd' src=" /media/{{item.pic3}}" alt=" /media/{{item.pic3}}"/>
+                </div>
+                <div class="carousel-item ">
+                    <img class='imgd' src=" /media/{{item.pic4}}" alt=" /media/{{item.pic3}}"/>
+                </div>
+            </div>
+
+            <!-- LEFT AND RIGHT CONTROLS-->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
+            <a class="carousel-control-next" href="#demo" data-slide="next"><span class="carousel-control-next-icon"></span></a>
+        </div>
+        
+        <!-- part of property details -->
+        <div class="property_detail">
+            <div class='name'>&nbsp;&nbsp;&nbsp;&nbsp;Property name : {{item.name}}</div><br>
+            <div class='description'>&nbsp;&nbsp;&nbsp;&nbsp;{{item.description}}.</div>
+            Address : <div class='address'>{{item.address}}</div>
+            <div class='city'>City : {{item.city}}</div>
+            <div class='category'>Category : {{item.category}} Land</div>
+            <div class='size'>Size : {{item.size}} sq. ft</div>
+            <div class='date'>Last Date of Auction : {{item.date}}</div>
+            <div class='minamnt'>Minimum amount for auction : {{item.minamnt}} Rs</div>
+            Document are available and are verfied by the Auction team.<br>
+            Add the feature that the minimum amount must be greter than minamnt.
+        </div>
+
+        <!-- part of seller details -->
+        <div class="seller_detail">
+            <div id='info'>Seller</div>
+            <div class='left'>
+                <img class='userpic' src='/media/{{owner.userpic}}' alt="/media/{{owner.userpic}}" />
+            </div>
+            <div class='middle'>
+                Name : {{owner.name}}<br><br>
+                Email : {{owner.email}}<br><br>
+                Gender : {{owner.gender}}
+            </div>
+            <div class='right'>
+                Mobile No : {{owner.email}}<br><br>
+                City : {{owner.city}}
+            </div>
+        </div>
+
+        <!-- part for entering bidding price -->
+        <div class="amount" style='padding: 10px;'>
+            <!-- IMP -->
+            <!-- if user has already participated in the auction -->
+            
+            <p><strong style="color: red; text-transform:uppercase; ">{{ error_message }}</strong></p>
+
+            <form method='POST' action="{% url 'auction:bid' item.id %}" style='border: 1px solid black'>
+                {% csrf_token %}
+                <!-- placeholder='Enter amount in Rs/-' -->
+                <div class="amntleft">
+                    <input type="checkbox" required/> I have personally 
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;confirmed all the details 
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;regarding the property
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;and have also visted the
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;site.
+                </div>
+                <div class="amntright">
+                    <input type="checkbox" name="buyer" value='{{buyer.id}}' required > I have read all the terms and condtions.
+                    <input style="padding:10px; margin-left: 20px; margin-top: 10px; " type="text" name='bidamnt' placeholder='Enter amount in Rs' required >
+                    <!-- add field for confirming the password -->
+                    <button class='btn btn-success' style='float:right' type='submit' name='sum'>Bid Price</button>
+                </div>
+                
+            </form>
+                
+        </div>
+    </body>
+</html>
+<script>
+</script>

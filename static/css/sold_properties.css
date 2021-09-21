@@ -1,0 +1,54 @@
+.boxc{
+    position: relative;
+	box-shadow: 20px 20px rgba(223, 55, 55, 0.7);
+    border-radius: 10px;
+    float: left;
+    width: 370px;
+    margin-top: 70px;
+    margin-left: 70px;
+    background-color: rgb(153, 153, 153);
+    border-color: black;
+}
+.imgc{
+    width: 400px;
+    height: 196px;
+}
+.top{
+    height: 200px;
+    background-color: transparent;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+}
+.bottom{
+    float: left;
+    width: 220px;
+    margin-top: 7px;
+    padding-top: 20px;
+    padding-left: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    border-right: 2px solid rgb(0, 0, 255);
+}
+.amnt{
+    background-color: violet;
+    border: 2px solid brown;
+    border-radius: 5px;
+    font-size: 20px;
+    float: right;
+    margin-top: 15px;
+    margin-right: 5px;
+    width: 120px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.date{
+    width: 120px;
+    float: right;
+    margin-top: 10px;
+    margin-right: 5px;
+    font-size: 15px;
+    color: black;
+}
+
+

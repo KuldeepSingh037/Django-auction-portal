@@ -1,0 +1,128 @@
+body{
+    background-color: rgb(10, 60, 0);
+    height: 730px;
+}
+.x{
+    background-color: white;
+}
+.pic{
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 20px;
+    width: 710px;
+    height: 450px;
+}
+.imgd{
+    width: 798px;
+    height: 448px;
+}
+.property_detail{
+    position: absolute;
+    border: 1px solid black;
+    border-radius: 0px 0px 0px 40px;
+    background-color: white;
+    margin-top: 480px;
+    margin-left: 10px;
+    padding: 10px;
+    width: 710px;
+    height: 230px;
+}
+.name{
+    font-size: 25px;
+    color: red;
+    padding-left: 1rem;
+    padding-bottom: 10px;
+    font-weight: 700;
+    font-family: cursive;
+    text-transform: capitalize;
+}
+.description{
+    color: rgb(33, 165, 0);
+    border-bottom: 2px solid black;
+    font-size: 20px;
+    font-weight: 450;
+}
+.pleft{
+    position: absolute;
+    width: 300px;
+    font-size: 17px;
+    padding-left: 10px;
+    font-weight: 500;
+}
+.pright{
+    position: absolute;
+    border-left: dashed;
+    width: 300px;
+    margin-left: 300px;
+    padding-left: 10px;
+    font-size: 17px;
+    font-weight: 500;
+}
+.bidamnt{
+    color: rgb(54, 214, 0);
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-align: center;
+}
+#info{
+    font-size: xx-large;
+    padding-left: 10px;
+    font-weight: 900;
+    font-family: 'Lucida calligraphy';
+    color: rgb(84, 2, 167);
+    background-color: burlywood;
+}
+/* left part */
+.left{
+    /*background-color: rgb(228, 228, 228);*/
+    position: absolute;
+    width: 200px;
+    height: 200px;
+}
+/* user_pic */
+.userpic{
+    width: 100%;
+    height: 100%;
+    float: left;
+    border-radius: 2rem;
+    border: 1px solid black;
+}
+/* seller_detail */
+.seller_detail{
+    position: absolute;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 0px 30px 0px 0px;
+    margin-left: 730px;
+    margin-top: 20px;
+    padding: 10px;
+    width: 610px;
+    height: 340px;
+}
+/* right part */
+.right{
+    position: absolute;
+    padding: 10px;
+    margin-left:230px ;
+    width: 350px;
+    height: 200px;
+    font-size: 20px ;
+}
+/* buyer_detail */
+.buyer_detail{
+    position: absolute;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 0px 0px 40px 0px;
+    margin-left: 730px;
+    margin-top: 370px;
+    padding: 10px;
+    width: 610px;
+    height: 340px;
+}
+
+
+
+
+
+

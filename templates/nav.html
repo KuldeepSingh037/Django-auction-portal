@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>naviation bar</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="{%static 'font-awesome-4.7.0/css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+
+
+    </head>
+
+    <body>
+        <img src="{% static 'pics/3.jpg' %}" style="margin-top: 20px; margin-left: 10px; border: none; border-radius: 25px;" width="90px" alt="logo"/>
+        <nav class="navbar navbar-expand-md " style="float: right;">
+            <button class="btn btn-info navbar-toggler" type="button" data-target="#target1" data-toggle="collapse" style="color: white;">
+                Menu <i class="fa fa-bars" style="color: aliceblue;"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="target1">
+                <ul class="navbar-nav text-uppercase" style="font-size: 23px;">
+                    
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                    <!-- <li class="nav-item "><a href="login.php" class="nav-link homenav login" style="color: rgb(255, 0, 0); font-family: LUCIDA CALLIGRAPHY; margin-top: 4px; font-size: 25px;" >Log in</a></li> -->
+                    <li class="nav-item "><a href="{% url 'login:login' %}" class="nav-link homenav login" style="color: rgb(255, 0, 0); font-family: LUCIDA CALLIGRAPHY; margin-top: 4px; font-size: 25px;" >Log in</a></li>
+                </ul>
+            </div>
+        </nav>
+    </body>
+</html>
+
+
+
+            

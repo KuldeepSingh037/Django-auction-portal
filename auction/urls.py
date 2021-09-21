@@ -23,7 +23,7 @@ urlpatterns = [
     # path('practice/',include('practice.urls')),
     # path('auction/',include('auction.urls')),
     # path('team/',include('team.urls')),
-    # path('home/',include('home.urls')),
+    path('home/',include('home.urls')),
     path('login/',include('login.urls')),
     path('admin/', admin.site.urls),
 ]

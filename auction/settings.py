@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     # 'practice.apps.PracticeConfig',
     # 'auction.apps.AuctionConfig',
     # 'team.apps.TeamConfig',
-    # 'home.apps.HomeConfig',
+    'home.apps.HomeConfig',
     'login.apps.LoginConfig',
     'django.contrib.admin',
     'django.contrib.auth',

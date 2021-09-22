@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'auction.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'auction',
         'USER': 'root',
         'PASSWORD': '',

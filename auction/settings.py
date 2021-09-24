@@ -27,7 +27,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '15#$q#&1eq_et1cfgyf^-34zczc7@1i^8_r9=8s*enj4#igk73'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','.herokuapp.com']
 
@@ -95,6 +95,13 @@ DATABASES = {
         'PORT': '3306',
     }
 }
+
+################
+# for postgres database
+# username: r
+# password: kuldeep
+
+
 
 WHITENOISE_USE_FINDERS = True
 

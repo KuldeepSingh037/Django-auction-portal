@@ -24,7 +24,6 @@ def home(request):
         user.save()
 
         item.delete()
-
     completed=complete.objects.all()
     return render(request, 'home/home_page.html', {
         'sold_properties' : completed,
@@ -32,6 +31,7 @@ def home(request):
 
 
 # when search button of home page is clicked
+
 def search(request):
     return render(request, 'login/login.html', {
         "error_message" : 'Login to continue !!!'

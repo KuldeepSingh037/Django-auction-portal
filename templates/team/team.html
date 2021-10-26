@@ -2,55 +2,61 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>ABOUT US</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{%static 'bootstrap/css/bootstrap.min.css' %}">
-        <link rel="stylesheet" href="{%static 'font-awesome-4.7.0/css/font-awesome.min.css' %}">
-        <link rel="stylesheet" href="{%static 'css/aboutus.css' %}">
-        <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+  <head>
+    <title>ABOUT US</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="{%static 'bootstrap/css/bootstrap.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{%static 'font-awesome-4.7.0/css/font-awesome.min.css' %}"
+    />
+    <link rel="stylesheet" href="{%static 'css/aboutus.css' %}" />
+    <script
+      src="https://platform.linkedin.com/badges/js/profile.js"
+      async
+      defer
+      type="text/javascript"
+    ></script>
 
-        <style>
-            i{
-                font-size: large;
-            }
-            i:hover{
-                font-size: 30px;
-                color: whitesmoke;
-            }
-        </style>
-    </head>
-    <body>
+    <style>
+      i {
+        font-size: large;
+      }
+      i:hover {
+        font-size: 30px;
+        color: whitesmoke;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- naviation bar included -->
+    {% include 'nav.html' %}
 
-        <!-- naviation bar included -->
-        {% include 'nav.html' %}
-
-        <div class="card left">                
-            <div class="front"><img src="{%static 'pics/kuldeep.jpg' %}" alt="1"> </div>
-            <div class="back">
-                <div class="back-content">
-                    <h3><b>Kuldeep Singh Gahlot</b></h3>
-                    <!-- <a href=""><i class="fa fa-facebook"></i></a> -->
-                    <a href="https://www.linkedin.com/in/kuldeep-singh-770452193/"><i class="fa fa-linkedin"></i></a>
-                    <!-- <a href=""><i class="fa fa-youtube"></i></a> -->
-                    <a href=""><i class="fa fa-instagram"></i></a>
-                </div>
-            </div>
+    <div class="card left">
+      <div class="front">
+        <img src="{%static 'pics/kuldeep.jpg' %}" alt="1" />
+      </div>
+      <div class="back">
+        <div class="back-content">
+          <h3><b>Kuldeep Singh Gahlot</b></h3>
+          <!-- <a href=""><i class="fa fa-facebook"></i></a> -->
+          <a href="https://www.linkedin.com/in/kuldeep-singh-770452193/"
+            ><i class="fa fa-linkedin"></i
+          ></a>
+          <!-- <a href=""><i class="fa fa-youtube"></i></a> -->
+          <a href=""><i class="fa fa-instagram"></i></a>
         </div>
+      </div>
+    </div>
 
-
-
-
-                            
-
-
-
-
-        <a href="" class="gotop" ><i id="gotop" class="fa fa-arrow-up"></i></a><br>
-    </body>
+    <a href="" class="gotop"><i id="gotop" class="fa fa-arrow-up"></i></a><br />
+  </body>
 </html>
 
 <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
-<script src="{% static 'js/popper.js' %}" ></script>
+<script src="{% static 'js/popper.js' %}"></script>

@@ -1,77 +1,130 @@
 {% load static %}
 
 <html>
-    <head>
-        <meta charset="utf-8">        
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
-        <link rel="stylesheet" href="{% static 'font-awesome-4.7.0/css/font-awesome.min.css' %}">
-        <link rel="stylesheet" href="{% static 'css/listing.css' %}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="{% static 'bootstrap/css/bootstrap.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'font-awesome-4.7.0/css/font-awesome.min.css' %}"
+    />
+    <link rel="stylesheet" href="{% static 'css/listing.css' %}" />
+  </head>
+  <body>
+    {% include 'portal/pannel.html' %}
 
-    </head>
-    <body>
+    <!-- printing the button for having an auction -->
+    <!-- have a nice name for the button -->
+    <form method="POST" action="{% url 'portal:auction' user.id %}">
+      {% csrf_token %}
+      <button
+        type="submit"
+        class="btn btn-success"
+        style="float: right; margin-top: 20px; margin-right: 20px"
+      >
+        Create an Auction</button
+      ><br /><br />
+    </form>
 
-        {% include 'portal/pannel.html' %}
-            
-        <!-- printing the button for having an auction -->
-        <!-- have a nice name for the button -->
-        <form method='POST' action="{% url 'portal:auction' user.id %}">
-            {% csrf_token %}
-            <button type='submit' class='btn btn-success' style='float:right;margin-top:20px; margin-right:20px;'>
-                Create an Auction
-            </button><br><br>
+    {% if error_message %}
+    <p style="margin-left: 600px; font-size: 30px">
+      <strong><u>{{ error_message }}</u></strong>
+    </p>
+    {% endif %}
+    <!-- for same blue area -->
+    <div class="listing">
+      {% for property in properties %}
+      <div class="box1">
+        <form
+          action="{% url 'portal:particular' property.id %}"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          {% csrf_token %}
+          <button type="submit" name="cid" value="{{ user.id }}">
+            <div class="detail">
+              <div class="left">
+                <img
+                  id="pic1"
+                  src="/media/{{ property.pic1 }}"
+                  width="270px"
+                  height="210px"
+                />
+              </div>
+              <div class="middle" style="padding-right: 20px">
+                <div
+                  style="
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    font-size: large;
+                  "
+                >
+                  {{ property.name}}
+                </div>
+                <div style="float: left; font-size: 18px">
+                  Description : {{ property.description }}
+                </div>
+                <br />
+                <div style="margin-top: 10px; float: center">
+                  City : {{ property.city }}
+                </div>
+                <br /><br />
+                <div style="font-size: larger; float: left">
+                  <i class="fa fa-building" style="font-size: 20px"></i
+                  >&nbsp;Type<br />
+                  <p style="text-align: center">{{ property.category }}</p>
+                </div>
+                <div style="font-size: larger; float: left; margin-left: 30px">
+                  <i class="fa fa-area-chart" style="font-size: 20px"></i
+                  >&nbsp;Area<br />
+                  <p style="text-align: center">{{ property.size }}</p>
+                </div>
+                <div style="font-size: larger; float: left; margin-left: 30px">
+                  <i class="fa fa-calendar" style="font-size: 20px"></i
+                  >&nbsp;Date of Auction<br />
+                  <p style="text-align: center">{{ property.date }}</p>
+                </div>
+                <br />
+              </div>
+              <div class="right" style="width: 250px">
+                <div
+                  style="font-size: large; margin-top: 10px; font-weight: 700"
+                >
+                  For Sale
+                </div>
+                <div
+                  style="
+                    font-size: 25px;
+                    color: rgb(0, 148, 54);
+                    font-weight: 600;
+                  "
+                >
+                  Rs {{ property.minamnt }}
+                </div>
+                <br /><br />
+                <div style="font-size: 18px; text-align: left">By Kapoor</div>
+                <div style="font-weight: 700">
+                  <div
+                    style="
+                      text-transform: uppercase;
+                      font-size: 20px;
+                      text-align: center;
+                    "
+                  >
+                    <!-- add feature of minamnt -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </button>
         </form>
-
-        {% if error_message %}
-            <p style="margin-left: 600px; font-size:30px; " ><strong><u>{{ error_message }}</u></strong></p>
-        {% endif %}
-        <!-- for same blue area -->
-        <div class="listing">
-            
-            {% for property in properties %}
-                <div class="box1"> 
-                    <form action="{% url 'portal:particular' property.id %}" method='POST' enctype="multipart/form-data">
-                        {% csrf_token %}
-                        <button type='submit' name='cid' value='{{ user.id }}'>
-                            <div class="detail">
-                                <div class="left">
-                                    <img id='pic1' src="/media/{{ property.pic1 }}" width="270px" height="210px">
-                                </div>
-                                <div class="middle" style='padding-right:20px'>
-                                    <div style="font-weight: 700; text-transform:uppercase; font-size: large;">
-                                        {{ property.name}}
-                                    </div>
-                                    <div style='float:left; font-size:18px'>Description : {{ property.description }}</div><br>
-                                    <div style='margin-top:10px; float:center'>City : {{ property.city }} </div><br><br>
-                                    <div style=" font-size: larger; float: left;">
-                                        <i class="fa fa-building" style="font-size: 20px;"></i>&nbsp;Type<br>
-                                        <p style="text-align: center;">{{ property.category }}</p>
-                                    </div>                    
-                                    <div style=" font-size: larger; float: left; margin-left: 30px;">
-                                        <i class="fa fa-area-chart" style="font-size: 20px;"></i>&nbsp;Area<br>
-                                        <p style="text-align: center;"> {{ property.size }} </p>
-                                    </div>
-                                    <div style="font-size: larger; float: left; margin-left: 30px;">
-                                        <i class="fa fa-calendar" style="font-size: 20px;"></i>&nbsp;Date of Auction<br>
-                                        <p style="text-align: center;">{{ property.date }}</p>                                                </div><br>                                                
-                                    </div>
-                                    <div class="right" style='width:250px' >
-                                        <div style="font-size: large;  margin-top: 10px; font-weight: 700;">For Sale</div>
-                                        <div style="font-size: 25px; color: rgb(0, 148, 54); font-weight: 600;">
-                                            Rs {{ property.minamnt }}
-                                        </div><br><br>
-                                    <div style="font-size: 18px; text-align:left;">By</div>
-                                    <div style="font-weight: 700;">                                    
-                                        <div style='text-transform: uppercase;font-size:20px;text-align:center; '>
-                                            add feature of minamnt
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </button>
-                    </form>
-                </div><br>
-            {% endfor %}
-        </div>
-    </body>
+      </div>
+      <br />
+      {% endfor %}
+    </div>
+  </body>
 </html>

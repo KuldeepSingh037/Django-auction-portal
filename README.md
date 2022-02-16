@@ -39,3 +39,8 @@ purchase the property.
 With this feature it prevents multiple bidding at the same property.
 
 
+## Feedback
+
+If you have any feedback, please reach out to me at 2019083@iiitdmj.ac.in
+
+
